@@ -1,4 +1,4 @@
-# Controller
+# DDAMI API SERVER
 
 ## 사용자 로그인
 
@@ -212,6 +212,7 @@
             "_id": "5f323dee085ba51d50ff5b3b"
         }
     ]
+
 }
 
 ## 미대생 인증 업로드 (관리자x -> 업로드시 인증 되는 것으로 진행)
@@ -234,7 +235,7 @@
 |        |                                                           |
 | ------ | --------------------------------------------------------- |
 | method | POST                                                      |
-| url    | /user/write/comment/:id   (작품 id, 댓글 id)              |
+| url    | /user/write/comment/:id (작품 id, 댓글 id)                |
 | Header |                                                           |
 | Body   | ex) <span style="color:gray">{"content":"첫 댓글"}</span> |
 | Return |                                                           |
@@ -437,7 +438,6 @@ list
     ]
     }
 
-
 ## 검색어 기록
 
 |             |                     |
@@ -455,7 +455,6 @@ list
         "김따미"
     ]
     }
-
 
 ## 따미 마을 작가 검색
 
@@ -576,7 +575,7 @@ list
         "__v": 2,
         "likeByUser": false
     }
-    }   
+    }
 
 - 조회수 증가 => 해당 게시물을 10분 안에 조회했었으면 증가 x
 
@@ -599,6 +598,7 @@ list
         "content": "세번째 댓글",
         "created": "2020-08-13T19:17:00.318Z",
     }
+
 }
 
 ## 따미 샾 작품,재료 좋아요
@@ -681,7 +681,6 @@ list
     }
     }
 
-
 ## 재료샾 상세보기
 
 |             |                           |
@@ -714,7 +713,7 @@ list
 
 ## 따미 작품 샾 검색
 
-1.  최신순/ 인기순 / 거리순  검색
+1.  최신순/ 인기순 / 거리순 검색
 
 |             |                                                                              |
 | ----------- | ---------------------------------------------------------------------------- |
@@ -723,7 +722,6 @@ list
 | Header      |                                                                              |
 | Body(Query) | ex) <span style="color:gray">{"list":0, "count": 2,"searchingBy":"" }</span> |
 | Return      |                                                                              |
-
 
     {
     "result": 1,
@@ -775,12 +773,11 @@ list
             "likeByMe": false
         }
     ]
+
 }
 
-
-- 인기순 => searchingBy || sortingBy || count ||  list || field
+- 인기순 => searchingBy || sortingBy || count || list || field
 - 거리순 => searchingBy || sortingBy || count || list || location
-   
 
 <center>옵션[options]</center>
 
@@ -793,12 +790,11 @@ sortingBy
 - D (default 최신순)
 - L (찜 순)
 - T (거리순)
-- 
-field
+- field
 
 - Default 전체 -> 파라미터 없으면 전체
 - [ 배열(String) ] 배열 요소중 한개라도 관련 있는 작품
-- 
+-
 
 count
 
@@ -811,17 +807,17 @@ list
 - list:0 count:10 -> 0~9까지 출력
 - list:1 count:10 -> 10~19까지 출력
 
+location
 
-location 
 - [ longitude , latitude ]
 - 현재 위치나 기준점이되는 위치 [경도,위도]
 - 가까운 순으로 정렬
 - 50km 이내로 제한을 둠
-- distance - 거리 (m) 
+- distance - 거리 (m)
 
 ## 따미 재료 샾 검색
 
-1.  최신순/ 인기순 / 거리순  검색
+1.  최신순/ 인기순 / 거리순 검색
 
 |             |                                                                                           |
 | ----------- | ----------------------------------------------------------------------------------------- |
@@ -830,7 +826,6 @@ location
 | Header      |                                                                                           |
 | Body(Query) | ex) <span style="color:gray">{"sortingBy":"T","list":1,"count":2,"location":[1,2]}</span> |
 | Return      |                                                                                           |
-
 
     {
     "result": 1,
@@ -862,10 +857,8 @@ location
     ]
     }
 
-
-- 인기순 => searchingBy || sortingBy || count ||  list || field
+- 인기순 => searchingBy || sortingBy || count || list || field
 - 거리순 => searchingBy || sortingBy || count || list || location
-   
 
 <center>옵션[options]</center>
 
@@ -878,12 +871,11 @@ sortingBy
 - D (default 최신순)
 - L (찜 순)
 - T (거리순)
-- 
-field
+- field
 
 - Default 전체 -> 파라미터 없으면 전체
 - [ 배열(String) ] 배열 요소중 한개라도 관련 있는 재료
-- 
+-
 
 count
 
@@ -896,10 +888,10 @@ list
 - list:0 count:10 -> 0~9까지 출력
 - list:1 count:10 -> 10~19까지 출력
 
+location
 
-location 
 - [ longitude , latitude ]
 - 현재 위치나 기준점이되는 위치 [경도,위도]
 - 가까운 순으로 정렬
 - 50km 이내로 제한을 둠
-- distance - 거리 (m) 
+- distance - 거리 (m)
